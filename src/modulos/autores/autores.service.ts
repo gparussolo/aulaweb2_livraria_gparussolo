@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { CriarAutorDto } from './autores.dto';
 
 let autores = [
   {
@@ -29,7 +30,21 @@ export class AutoresService {
     return autores;
   }
   listarAutor(id: number) {
-    const autorEncontrado = autores.find((autor) => autor.id === id);
-    return autorEncontrado;
+    const autor = autores.find((autor) => autor.id === id);
+
+    if (autor) {
+      return autor;
+    }
+
+    return 'Autor não encontrado';
+  }
+
+  criarAutor(body: any) {
+    autores.push({
+      id: autores.length + 1,
+      nome: body.nome,
+      email: body.email,
+    });
+    return autores;
   }
 }
