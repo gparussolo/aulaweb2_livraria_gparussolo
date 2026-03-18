@@ -7,7 +7,7 @@ import {
   Post,
 } from '@nestjs/common';
 import { AutoresService } from './autores.service';
-import { CriarAutorDto } from './autores dto';
+import { CriarAutorDto } from './autores.dto';
 
 @Controller('autores')
 export class AutoresController {

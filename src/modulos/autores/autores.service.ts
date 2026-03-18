@@ -39,7 +39,7 @@ export class AutoresService {
     return 'Autor não encontrado';
   }
 
-  criarAutor(body: any) {
+  criarAutor(body: CriarAutorDto) {
     autores.push({
       id: autores.length + 1,
       nome: body.nome,
